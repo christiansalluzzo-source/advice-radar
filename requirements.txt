@@ -1,0 +1,4 @@
+praw>=7.7,<8
+gspread>=6.1,<7
+google-auth>=2.30,<3
+pyyaml>=6.0,<7

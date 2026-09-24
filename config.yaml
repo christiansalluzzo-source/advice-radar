@@ -1,0 +1,49 @@
+# Starting list -- placeholder until Christian sends the real structure.
+# Safe to edit directly (including from the GitHub web UI on a phone); no
+# code changes needed for subreddit/keyword updates.
+
+subreddits:
+  # Tier 1 -- trade/business-operator subs. This is where switching-intent
+  # signal actually lives (r/Contractor already sourced the two strongest
+  # signals logged in Suburbly's COMPETITIVE_ANALYSIS.md this session).
+  - Contractor
+  - HVAC
+  - Landscaping
+  - lawncare
+  - PestControl
+  - Roofing
+  - CleaningBusinessOwners
+  - electricians
+  - Plumbing
+  - smallbusiness
+  - Entrepreneur
+  # Tier 2 -- capture goal #3 (test candidates) and #1 (product-shaping
+  # chatter). r/AlphaandBetaUsers exists specifically for beta-tester
+  # requests; r/microsaas is where the guideline thread that shaped this
+  # tool came from.
+  - AlphaandBetaUsers
+  - microsaas
+  - SaaS
+
+keywords:
+  # Competitor names (from COMPETITIVE_ANALYSIS.md's Sixth Source)
+  - Jobber
+  - Housecall Pro
+  - Spotio
+  - SalesRabbit
+  - ServiceTitan
+  - Yardbook
+  - Service Autopilot
+  - Aspire
+  - Spraye
+  # Intent/complaint phrasing -- catches switching intent even when no
+  # specific competitor is named
+  - alternative to
+  - switching from
+  - tired of paying for
+  - cancelled my
+  - does anyone know a tool
+  - is there a better way to
+  - anyone else using
+  - recommend a contractor
+  - recommend a tool

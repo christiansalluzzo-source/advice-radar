@@ -1,0 +1,32 @@
+name: Reddit Lead Monitor
+
+on:
+  schedule:
+    - cron: '11,41 * * * *'   # every 30 min, off the :00/:30 marks -- see README for cost math
+  workflow_dispatch: {}        # manual "Run workflow" button, used for testing
+
+concurrency:
+  group: reddit-lead-monitor
+  cancel-in-progress: false    # queue, never run two in parallel -- protects the State cursor
+
+permissions:
+  contents: read                # no write needed -- state lives in the Sheet, not git
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Run monitor
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+        run: python src/monitor.py

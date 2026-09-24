@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Never commit credentials -- these are read from env vars / GitHub Secrets only.
+# (the Google service account key downloads as a .json file -- keep it out entirely)
+*.json
+.env

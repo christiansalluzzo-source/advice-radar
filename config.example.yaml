@@ -1,0 +1,18 @@
+# Copy this to config.yaml and edit -- config.yaml is committed too (it's not
+# sensitive, just a subreddit/keyword list), but keeping this example around
+# documents the shape and gives you something to diff against.
+
+subreddits:
+  # No "r/" prefix, no leading slash -- just the subreddit name.
+  - Contractor
+  - HVAC
+
+keywords:
+  # Case-insensitive substring match against post title+body / comment body.
+  # Mix competitor names with intent/complaint phrasing -- phrasing like
+  # "switching from" or "tired of paying for" catches people mid-decision,
+  # not just people already naming a specific product.
+  - Jobber
+  - switching from
+  - tired of paying for
+  - alternative to
