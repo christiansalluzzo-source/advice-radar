@@ -1,9 +1,12 @@
 name: Reddit Lead Monitor
 
 on:
-  schedule:
-    - cron: '11,41 * * * *'   # every 30 min, off the :00/:30 marks -- see README for cost math
-  workflow_dispatch: {}        # manual "Run workflow" button, used for testing
+  # schedule trigger is commented out until SETUP_CHECKLIST.md is done --
+  # otherwise this fires every 30 min and fails on missing secrets from the
+  # moment it's pushed. Uncomment these 2 lines once the 5 secrets are set.
+  # schedule:
+  #   - cron: '11,41 * * * *'   # every 30 min, off the :00/:30 marks -- see README for cost math
+  workflow_dispatch: {}        # manual "Run workflow" button -- use this to test before enabling schedule
 
 concurrency:
   group: reddit-lead-monitor
