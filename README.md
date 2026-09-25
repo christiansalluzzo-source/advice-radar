@@ -9,7 +9,11 @@ comments, votes, or messages anyone on its own.
 Runs entirely on GitHub's own hosted runners on a schedule
 (`.github/workflows/monitor.yml`) -- no machine of yours needs to stay on,
 and it's independent of any Claude Code session. See `SETUP_CHECKLIST.md`
-for one-time setup (Reddit app, Google service account, GitHub Secrets).
+for one-time setup (Reddit API access request, Google service account,
+GitHub Secrets) **and its "Current status" section for where things
+actually stand right now** -- Reddit access requires a manual approval with
+no published turnaround, so this can sit half-finished for a while and
+that's expected, not broken.
 
 ## How it works
 
