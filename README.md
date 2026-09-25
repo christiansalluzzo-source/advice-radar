@@ -84,6 +84,13 @@ pip install pytest
 pytest tests/
 ```
 
+Sheets-only smoke test -- confirms the Google side works with no Reddit
+credentials needed at all (useful while waiting on Reddit approval):
+```
+export GOOGLE_SERVICE_ACCOUNT_JSON='...' SHEET_ID=...
+python scripts/smoke_test_sheets.py
+```
+
 ## Known limitations
 
 - Reddit's `/comments` endpoint only returns a recent window of comments
