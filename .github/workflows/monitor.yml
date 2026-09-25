@@ -1,15 +1,15 @@
-name: Reddit Lead Monitor
+name: Advice Radar
 
 on:
   # schedule trigger is commented out until SETUP_CHECKLIST.md is done --
   # otherwise this fires every 30 min and fails on missing secrets from the
-  # moment it's pushed. Uncomment these 2 lines once the 5 secrets are set.
+  # moment it's pushed. Uncomment these 2 lines once the 6 secrets are set.
   # schedule:
   #   - cron: '11,41 * * * *'   # every 30 min, off the :00/:30 marks -- see README for cost math
   workflow_dispatch: {}        # manual "Run workflow" button -- use this to test before enabling schedule
 
 concurrency:
-  group: reddit-lead-monitor
+  group: advice-radar
   cancel-in-progress: false    # queue, never run two in parallel -- protects the State cursor
 
 permissions:
@@ -32,4 +32,5 @@ jobs:
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           SHEET_ID: ${{ secrets.SHEET_ID }}
+          MONITORED_SUBREDDITS: ${{ secrets.MONITORED_SUBREDDITS }}
         run: python src/monitor.py

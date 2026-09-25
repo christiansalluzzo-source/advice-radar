@@ -39,18 +39,24 @@ Do these once, in order. Nothing here needs to be repeated when
 
 ## C. GitHub repo + secrets
 
-1. Create a new **private** GitHub repo (e.g. `reddit-lead-monitor`).
+1. Create a new GitHub repo with a low-signal name, same reasoning as the
+   Reddit app name above.
 2. Push this code to it.
 3. Repo → **Settings** → **Secrets and variables** → **Actions** → **New
-   repository secret**, add all five:
+   repository secret**, add all six:
    - `REDDIT_CLIENT_ID`
    - `REDDIT_CLIENT_SECRET`
    - `REDDIT_USER_AGENT`
    - `GOOGLE_SERVICE_ACCOUNT_JSON` -- paste the **entire contents** of the
      downloaded JSON key file
    - `SHEET_ID`
-4. Edit `config.yaml` with the real subreddit/keyword list (the committed
-   one is a placeholder -- safe starting point, not final).
+   - `MONITORED_SUBREDDITS` -- comma-separated, no spaces needed either way,
+     e.g. `Contractor,HVAC,Landscaping`. This is a secret rather than
+     something in `config.yaml` on purpose -- it's the one part of this
+     tool's targeting worth keeping off a public repo's diff.
+4. Edit `config.yaml` with the real keyword list (the committed one is a
+   placeholder -- safe starting point, not final). Subreddits are edited by
+   updating the `MONITORED_SUBREDDITS` secret instead, not this file.
 5. Settings → Actions → General → confirm workflows are allowed to run.
 
 ## Testing before you trust it unattended
@@ -59,8 +65,8 @@ Do these once, in order. Nothing here needs to be repeated when
    confirms credentials work and rows land in the Sheet correctly, with
    fast feedback and full error output in your own terminal.
 2. Push to GitHub, then run it manually a few times via the **Actions** tab
-   → *Reddit Lead Monitor* → **Run workflow** (the `workflow_dispatch`
-   trigger) -- watch the live log for each run.
+   → the workflow name → **Run workflow** (the `workflow_dispatch` trigger)
+   -- watch the live log for each run.
 3. Force a guaranteed match: temporarily add a very common word to
    `config.yaml`'s keywords, run once, confirm a correctly-formatted row
    appears in `Leads` with a working permalink, then revert the keyword.

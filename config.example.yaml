@@ -1,11 +1,11 @@
-# Copy this to config.yaml and edit -- config.yaml is committed too (it's not
-# sensitive, just a subreddit/keyword list), but keeping this example around
-# documents the shape and gives you something to diff against.
-
-subreddits:
-  # No "r/" prefix, no leading slash -- just the subreddit name.
-  - Contractor
-  - HVAC
+# Copy this to config.yaml and edit -- config.yaml is committed too (nothing
+# sensitive in a keyword list), but keeping this example around documents the
+# shape and gives you something to diff against.
+#
+# The subreddit list is NOT here -- it lives in the MONITORED_SUBREDDITS
+# GitHub Secret instead (comma-separated, e.g. "Contractor,HVAC"). See
+# SETUP_CHECKLIST.md. Keeping it out of a committed file is the one bit of
+# this tool's targeting worth not putting on a public diff.
 
 keywords:
   # Case-insensitive substring match against post title+body / comment body.

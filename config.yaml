@@ -1,29 +1,8 @@
-# Starting list -- placeholder until Christian sends the real structure.
-# Safe to edit directly (including from the GitHub web UI on a phone); no
-# code changes needed for subreddit/keyword updates.
-
-subreddits:
-  # Tier 1 -- trade/business-operator subs. This is where switching-intent
-  # signal actually lives (r/Contractor already sourced the two strongest
-  # signals logged in Suburbly's COMPETITIVE_ANALYSIS.md this session).
-  - Contractor
-  - HVAC
-  - Landscaping
-  - lawncare
-  - PestControl
-  - Roofing
-  - CleaningBusinessOwners
-  - electricians
-  - Plumbing
-  - smallbusiness
-  - Entrepreneur
-  # Tier 2 -- capture goal #3 (test candidates) and #1 (product-shaping
-  # chatter). r/AlphaandBetaUsers exists specifically for beta-tester
-  # requests; r/microsaas is where the guideline thread that shaped this
-  # tool came from.
-  - AlphaandBetaUsers
-  - microsaas
-  - SaaS
+# Subreddit list lives in the MONITORED_SUBREDDITS GitHub Secret instead of
+# here -- see SETUP_CHECKLIST.md. This file only holds keywords now: either
+# already-public competitor names or generic English phrases, so there's
+# nothing gained by hiding them, and editing this list never needs touching
+# GitHub Secrets.
 
 keywords:
   # Competitor names (from COMPETITIVE_ANALYSIS.md's Sixth Source)
