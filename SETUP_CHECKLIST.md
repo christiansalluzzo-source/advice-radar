@@ -6,14 +6,18 @@ Do these once, in order. Nothing here needs to be repeated when
 ## A. Reddit app (no password needed)
 
 1. Go to https://www.reddit.com/prefs/apps
-2. "create another app…" → type **script** → name it something like
-   `suburbly-lead-monitor` → redirect URI can be a placeholder
-   (`http://localhost:8080`) -- it's unused for this auth flow.
+2. "create another app…" → type **script** → name it something generic and
+   low-signal like `reddit-helper` (deliberately not something that
+   describes what it does -- a name like "lead-monitor" is exactly the kind
+   of thing that draws unwanted attention if anyone looks at the app list)
+   → redirect URI can be a placeholder (`http://localhost:8080`) -- it's
+   unused for this auth flow.
 3. After creating it, note two values:
    - **client_id** -- the string shown right under the app's name
    - **client_secret** -- the field labeled "secret"
-4. Pick a User-Agent string in Reddit's required format:
-   `github-actions:suburbly-lead-monitor:v1.0 (by /u/<your-reddit-username>)`
+4. Pick a User-Agent string in Reddit's required format, matching whatever
+   name you used above:
+   `github-actions:reddit-helper:v1.0 (by /u/<your-reddit-username>)`
 
 ## B. Google service account + Sheet
 
